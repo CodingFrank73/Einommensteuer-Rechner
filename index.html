@@ -5,11 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Einkommersteuer-Rechner</title>
     <link rel="stylesheet" href="assets/sass/main.css">
 </head>
 
 <body>
+    <header>
+        <h1>Einkommensteuerrechner</h1>
+    </header>
+    <main>
+        <section>
+            <form action="" onsubmit="return false">
+                <label for="">Jahr:</label>
+                <select name="" id="">
+                    <option value="2022" selected>2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2021">2020</option>
+                    <option value="2021">2019</option>
+                </select>
+                <label for="">Art der Veranlagerung:</label>
+                <article>
+                    <div>
+                        <input type="radio" name="veranlagung" id="a" checked>
+                        <label for="veranlagung">Einzelveranlagung</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="veranlagung" id="b">
+                        <label for="veranlagung">Zusammenveranlagung</label>
+                    </div>
+                </article>
+                <label for="">zu versteuerndes Einkommen:</label>
+                <div>
+                    <label for="zvE-PersonA">Person A</label>
+                    <input type="number" name="zvE-PersonA" id="zvE-PersonA">
+                    <div id="group-zvE-PersonB">
+                        <label for="zvE-PersonB">Person B</label>
+                        <input type="number" name="zvE-PersonB" id="zvE-PersonB">
+                    </div>
+                </div>
+
+                <div id="result"></div>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+        <button
+            onclick="calc(2022, (document.getElementById('zvE-PersonA').value), (document.getElementById('zvE-PersonB').value) )">Berechnen</button>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 
