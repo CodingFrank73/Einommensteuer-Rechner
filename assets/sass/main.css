@@ -32,6 +32,10 @@ header h1 {
   margin-top: 20px;
 }
 
+#result {
+  color: forestgreen;
+}
+
 .year, .veranlagung, .einkommen, .result-area {
   display: grid;
   grid-template-columns: 55% 1fr;
@@ -63,8 +67,4 @@ header h1 {
 }
 .input-design:focus {
   outline: none;
-}
-
-#result {
-  color: forestgreen;
 }/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 var radios = document.querySelectorAll('input[type=radio][name="veranlagung"]');
 
 radios.forEach(radio => radio.addEventListener('change', () => {
-    radio.id == "b" ? document.getElementById("group-zvE-PersonB").style.display = "block" : clear();
+    radios.item(1).checked ? document.getElementById("group-zvE-PersonB").style.display = "block" : clear();
 }));
 
 function clear() {
@@ -48,7 +48,7 @@ function getCalcValues(year, einkommen) {
             break;
     }
 
-    return radios.item(1).checked == true ? Math.floor(preResult * 2) : Math.floor(preResult);
+    return radios.item(1).checked ? Math.floor(2 * preResult) : Math.floor(preResult);
 }
 
 function getEinkommensgrenzen2022() {

@@ -29,10 +29,13 @@ header{
     }
 }
 
-
 #group-zvE-PersonB{
     display: none;
     margin-top: 20px;
+}
+
+#result{
+    color: forestgreen;
 }
 
 .year, .veranlagung, .einkommen, .result-area{
@@ -70,6 +73,4 @@ header{
     }
 }
 
-#result{
-    color: forestgreen;
-}
+
