@@ -10,16 +10,14 @@ function clear() {
 }
 
 function calc(year, zvEPersonA, zvEPersonB) {
-
     (zvEPersonA < 0 || zvEPersonB < 0) ? document.getElementById('result').innerHTML = "Berechnung ist nur mit Positiven Zahlen möglich" :
-        document.getElementById('result').innerHTML = getCalcValues(year, (Number(zvEPersonA) + Number(zvEPersonB)));
-
+        document.getElementById('result').innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(getCalcValues(year, (Number(zvEPersonA) + Number(zvEPersonB))));
 }
 
 function getCalcValues(year, einkommen) {
     let preResult;
 
-    switch (year) {
+    switch (Number(year)) {
 
         case 2022:
             einkommen >= getEinkommensgrenzen2022()[0] ? preResult = eStZone4und5(einkommen, 0.45, 17602.28) :
@@ -50,7 +48,7 @@ function getCalcValues(year, einkommen) {
             break;
     }
 
-    return radios.item(1).checked == true ? preResult * 2 : preResult
+    return radios.item(1).checked == true ? Math.floor(preResult * 2) : Math.floor(preResult);
 }
 
 function getEinkommensgrenzen2022() {

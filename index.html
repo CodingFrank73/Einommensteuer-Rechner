@@ -16,42 +16,65 @@
     <main>
         <section>
             <form action="" onsubmit="return false">
-                <label for="">Jahr:</label>
-                <select name="" id="">
-                    <option value="2022" selected>2022</option>
-                    <option value="2021">2021</option>
-                    <option value="2021">2020</option>
-                    <option value="2021">2019</option>
-                </select>
-                <label for="">Art der Veranlagerung:</label>
-                <article>
+                <article class="year">
+                    <label for="year">Jahr:</label>
+                    <select class="input-design" name="year" id="year">
+                        <option value="2022" selected>2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </article>
+
+                <article class="veranlagung">
+                    <label for="">Art der Veranlagung:</label>
                     <div>
-                        <input type="radio" name="veranlagung" id="a" checked>
-                        <label for="veranlagung">Einzelveranlagung</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="veranlagung" id="b">
-                        <label for="veranlagung">Zusammenveranlagung</label>
+                        <div>
+                            <input type="radio" name="veranlagung" id="a" checked>
+                            <label for="veranlagung">Einzelveranlagung</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="veranlagung" id="b">
+                            <label for="veranlagung">Zusammenveranlagung</label>
+                        </div>
+
                     </div>
                 </article>
-                <label for="">zu versteuerndes Einkommen:</label>
-                <div>
-                    <label for="zvE-PersonA">Person A</label>
-                    <input type="number" name="zvE-PersonA" id="zvE-PersonA">
-                    <div id="group-zvE-PersonB">
-                        <label for="zvE-PersonB">Person B</label>
-                        <input type="number" name="zvE-PersonB" id="zvE-PersonB">
-                    </div>
-                </div>
 
-                <div id="result"></div>
+                <article class="einkommen">
+                    <label for="">zu versteuerndes Einkommen (zvE):</label>
+                    <div>
+                        <div>
+                            <input class="input-design" type="number" name="zvE-PersonA" id="zvE-PersonA" step="0.01">
+                        </div>
+
+                        <div id="group-zvE-PersonB">
+                            <label for="zvE-PersonB">zvE zweite Person (Splittingtarif)</label>
+                            <input class="input-design" type="number" name="zvE-PersonB" id="zvE-PersonB">
+                        </div>
+                    </div>
+                </article>
+
+                <article class="result-area">
+                    <p>Ihr zu versteuerndes Einkommen:</p>
+
+                    <div id="result"></div>
+                </article>
+
+                <article class="click-area">
+                    <button
+                        onclick="calc(document.getElementById('year').value, (document.getElementById('zvE-PersonA').value), (document.getElementById('zvE-PersonB').value) )">BERECHNUNG
+                        STARTEN</button>
+                </article>
+
+
+
 
             </form>
         </section>
     </main>
     <footer>
-        <button
-            onclick="calc(2022, (document.getElementById('zvE-PersonA').value), (document.getElementById('zvE-PersonB').value) )">Berechnen</button>
+
     </footer>
 
     <script src="assets/js/main.js"></script>

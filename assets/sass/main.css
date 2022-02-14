@@ -1,3 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid;
+  margin: 10% 20%;
+}
+
+header {
+  height: 45px;
+  padding: 5px;
+  background-color: #294d6d;
+}
+header h1 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
 #group-zvE-PersonB {
   display: none;
+  margin-top: 20px;
+}
+
+.year, .veranlagung, .einkommen, .result-area {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  padding: 30px 20px;
+  border-bottom: 1px solid gray;
+}
+
+.click-area {
+  padding: 20px 20px;
+  background-color: #e7e8e9;
+}
+.click-area button {
+  width: 100%;
+  padding: 10px 0px;
+  color: #294d6d;
+}
+
+.result-area {
+  border-bottom: unset;
+}
+
+.input-design {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 80%;
+  padding: 4px 2px;
+  font-family: "Open Sans", sans-serif;
+  color: #294d6d;
+}
+.input-design:focus {
+  outline: none;
+}
+
+#result {
+  color: forestgreen;
 }/*# sourceMappingURL=main.css.map */
