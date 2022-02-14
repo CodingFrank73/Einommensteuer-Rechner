@@ -10,13 +10,16 @@ function clear() {
 }
 
 function calc(year, zvEPersonA, zvEPersonB) {
-    (zvEPersonA < 0 || zvEPersonB < 0) ? document.getElementById('result').innerHTML = "Berechnung ist nur mit Positiven Zahlen möglich" :
-        document.getElementById('result').innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(getCalcValues(year, (Number(zvEPersonA) + Number(zvEPersonB))));
+    console.log(zvEPersonA);
+    console.log(zvEPersonB);
+    console.log((Number(zvEPersonA) + Number(zvEPersonB)) / 2);
+
+    (zvEPersonA < 0 || zvEPersonB < 0) ? document.getElementById('result').innerHTML = "Berechnung ist nur mit Positiven Zahlen möglich" : radios.item(1).checked ? document.getElementById('result').innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(getCalcValues(year, ((Number(zvEPersonA) + Number(zvEPersonB)) / 2))) : document.getElementById('result').innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(getCalcValues(year, Number(zvEPersonA)));
 }
 
 function getCalcValues(year, einkommen) {
     let preResult;
-
+    console.log(einkommen);
     switch (Number(year)) {
 
         case 2022:
